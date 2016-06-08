@@ -1,3 +1,5 @@
+//test the new branch
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -26,14 +28,14 @@ public class RemoteDatabase {
 		String sql = "select * from student";
 
 		try {
-			//×¢²áÇı¶¯£¬¼ÓÔØÏëÒªÁ¬½ÓµÄÊı¾İ¿âµÄÇı¶¯µ½JVM
+			//æ³¨å†Œé©±åŠ¨ï¼ŒåŠ è½½æƒ³è¦è¿æ¥çš„æ•°æ®åº“çš„é©±åŠ¨åˆ°JVM
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(urlRemote, user, password);
 			
 			stmt = conn.createStatement();
-			// ÕâÁ½ÖÖÒ²¿ÉÒÔ»ñÈ¡StatementÊµÀı
+			// è¿™ä¸¤ç§ä¹Ÿå¯ä»¥è·å–Statementå®ä¾‹
 			// PreparedStatement pstmt = conn.prepareStatement(sql) ;
-			// CallableStatement cstmt = conn.prepareCall("{CALL demoSp(? , ?)}")£»
+			// CallableStatement cstmt = conn.prepareCall("{CALL demoSp(? , ?)}")ï¼›
 
 			rs = stmt.executeQuery(sql);
 
